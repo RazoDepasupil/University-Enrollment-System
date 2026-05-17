@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduPortal — Enrollment System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ══════════════════════════════════════════
+     LOGIN PAGE
+═══════════════════════════════════════════ -->
+    <div id="login-page">
+      <div class="login-card">
+        <div class="login-logo">EduPortal</div>
+        <div class="login-sub">University Enrollment System</div>
+        <div class="field">
+          <label>Student ID or Username</label>
+          <input
+            type="text"
+            id="login-user"
+            placeholder="1234-4567-8 or username1"
+            autocomplete="username"
+          />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input
+            type="password"
+            id="login-pass"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+        </div>
+        <button class="btn-primary" onclick="doLogin()">Sign in</button>
+        <div class="login-error" id="login-err"></div>
+      </div>
+    </div>
+
+    <header class="topbar hidden" id="topbar">
+      <div class="topbar-brand">EduPortal <span>Enrollment</span></div>
+      <div class="topbar-right">
+        <div class="user-pill">
+          <div class="avatar avatar-green" id="top-avatar">?</div>
+          <span id="top-name">User</span>
+        </div>
+        <button class="btn-logout" onclick="doLogout()">Log out</button>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════════════════
+     STUDENT APP
+═══════════════════════════════════════════ -->
+    <div class="app" id="student-app">
+      <div class="nav-tabs">
+        <button
+          class="nav-tab active"
+          onclick="showStudentTab('courses', this)"
+        >
+          Pre-Enrollment
+        </button>
+        <button class="nav-tab" onclick="showStudentTab('enrolled', this)">
+          My Enrollments
+        </button>
+        <button class="nav-tab" onclick="showStudentTab('grades', this)">
+          My Grades
+        </button>
+        <button class="nav-tab" onclick="showStudentTab('requests', this)">
+          Drop Requests
+        </button>
+        <button class="nav-tab" onclick="showStudentTab('profile', this)">
+          Profile
+        </button>
+      </div>
+
+      <!-- Courses Tab -->
+      <div id="tab-courses">
+        <div class="section-title">
+          Pre-Enrollment <small id="course-count"></small>
+        </div>
+        <div class="search-bar">
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search by code or title…"
+            oninput="filterCourses(this.value)"
+          />
+        </div>
+        <div class="course-grid" id="course-grid"></div>
+      </div>
+
+      <!-- Enrolled Tab -->
+      <div id="tab-enrolled" class="hidden">
+        <div class="section-title">My Enrollments</div>
+        <div class="stats" id="s-stats">
+          <div class="stat-card">
+            <div class="stat-label">Enrolled Subjects</div>
+            <div class="stat-val" id="st-count">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Units</div>
+            <div class="stat-val" id="st-units">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pending Drops</div>
+            <div class="stat-val" id="st-drops">0</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Course</th>
+                  <th>Schedule</th>
+                  <th>Units</th>
+                  <th>Status</th>
+                  <th>Date Enrolled</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="enrolled-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drop Requests Tab -->
+      <div id="tab-requests" class="hidden">
+        <div class="section-title">Drop Requests</div>
+        <div id="drop-req-list"></div>
+      </div>
+
+      <!-- Grades Tab -->
+      <div id="tab-grades" class="hidden">
+        <div class="section-title">My Grades</div>
+        <div class="stats" style="margin-bottom: 1rem">
+          <div class="stat-card">
+            <div class="stat-label">Overall GWA</div>
+            <div class="stat-val" id="st-gwa">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Graded Subjects</div>
+            <div class="stat-val" id="st-graded">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pending Grades</div>
+            <div class="stat-val" id="st-pending-grades">0</div>
+          </div>
+        </div>
+        <div id="grades-container"></div>
+      </div>
+
+      <!-- Profile Tab -->
+      <div id="tab-profile" class="hidden">
+        <div class="section-title">My Profile</div>
+        <div class="card" id="profile-content"></div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+     FACULTY APP
+═══════════════════════════════════════════ -->
+    <div class="app" id="faculty-app">
+      <div class="nav-tabs">
+        <button
+          class="nav-tab active"
+          onclick="showFacultyTab('pending', this)"
+        >
+          Pending Requests
+          <span
+            id="pending-badge"
+            class="badge badge-amber"
+            style="margin-left: 4px"
+          ></span>
+        </button>
+        <button class="nav-tab" onclick="showFacultyTab('all-req', this)">
+          All Requests
+        </button>
+        <button class="nav-tab" onclick="showFacultyTab('fac-grades', this)">
+          Post Grades
+        </button>
+        <button class="nav-tab" onclick="showFacultyTab('fac-courses', this)">
+          Course Roster
+        </button>
+      </div>
+
+      <!-- Pending -->
+      <div id="tab-pending">
+        <div class="section-title">Pending Drop Requests</div>
+        <div id="pending-list"></div>
+      </div>
+
+      <!-- All Requests -->
+      <div id="tab-all-req" class="hidden">
+        <div class="section-title">All Drop Requests</div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Course</th>
+                  <th>Reason</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Note</th>
+                </tr>
+              </thead>
+              <tbody id="all-req-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Grades -->
+      <div id="tab-fac-grades" class="hidden">
+        <div class="section-title">Post Grades</div>
+        <div class="card" style="margin-bottom: 1rem; padding: 1rem 1.25rem">
+          <div
+            style="
+              display: flex;
+              gap: 0.75rem;
+              flex-wrap: wrap;
+              align-items: flex-end;
+            "
+          >
+            <div class="field" style="margin: 0; flex: 1; min-width: 160px">
+              <label style="font-size: 0.8rem; color: var(--muted)"
+                >Filter by Course</label
+              >
+              <select
+                id="grade-filter-course"
+                onchange="filterGradeTable()"
+                style="
+                  width: 100%;
+                  padding: 7px 10px;
+                  border: 1px solid var(--border);
+                  border-radius: 6px;
+                  font-size: 0.88rem;
+                "
+              >
+                <option value="">All Courses</option>
+              </select>
+            </div>
+            <div class="field" style="margin: 0; flex: 1; min-width: 160px">
+              <label style="font-size: 0.8rem; color: var(--muted)"
+                >Filter by Student</label
+              >
+              <input
+                type="text"
+                id="grade-filter-student"
+                placeholder="Search student…"
+                oninput="filterGradeTable()"
+                style="
+                  width: 100%;
+                  padding: 7px 10px;
+                  border: 1px solid var(--border);
+                  border-radius: 6px;
+                  font-size: 0.88rem;
+                "
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Course</th>
+                  <th>Units</th>
+                  <th>Current Grade</th>
+                  <th>Post Grade</th>
+                </tr>
+              </thead>
+              <tbody id="fac-grades-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Roster -->
+      <div id="tab-fac-courses" class="hidden">
+        <div class="section-title">Course Roster</div>
+        <div id="fac-course-list"></div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════ -->
+    <!-- Drop Request Modal -->
+    <div
+      class="modal-overlay"
+      id="modal-drop"
+      onclick="closeModal('modal-drop', event)"
+    >
+      <div class="modal" onclick="event.stopPropagation()">
+        <div class="modal-title">Request Course Drop</div>
+        <div class="modal-sub" id="drop-modal-sub"></div>
+        <div class="field"><label>Reason</label></div>
+        <textarea
+          class="field-ta"
+          id="drop-reason"
+          placeholder="Explain why you want to drop this course…"
+        ></textarea>
+        <div class="modal-actions">
+          <button class="btn-cancel" onclick="closeModal('modal-drop')">
+            Cancel
+          </button>
+          <button class="btn-danger" onclick="submitDrop()">
+            Submit Request
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reject Note Modal -->
+    <div
+      class="modal-overlay"
+      id="modal-reject"
+      onclick="closeModal('modal-reject', event)"
+    >
+      <div class="modal" onclick="event.stopPropagation()">
+        <div class="modal-title">Reject Drop Request</div>
+        <div class="modal-sub" id="reject-modal-sub"></div>
+        <div class="field"><label>Note to Student (optional)</label></div>
+        <textarea
+          class="field-ta"
+          id="reject-note"
+          placeholder="Reason for rejection…"
+        ></textarea>
+        <div class="modal-actions">
+          <button class="btn-cancel" onclick="closeModal('modal-reject')">
+            Cancel
+          </button>
+          <button class="btn-danger" onclick="confirmReject()">Reject</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast container -->
+    <div class="toast-stack" id="toasts"></div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

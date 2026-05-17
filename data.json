@@ -1,0 +1,525 @@
+{
+  "user": {
+    "students": [
+      {
+        "id": "2023-7066-I",
+        "name": "Razo B. Depasupil",
+        "username": "razodepasupil1",
+        "password": "pass123",
+        "program": "BSCS",
+        "yearLevel": 3,
+        "email": "razo.b.depasupil@students.edu.ph",
+        "role": "student"
+      },
+      {
+        "id": "2023-1001-A",
+        "name": "Adrianne Velado",
+        "username": "avelado1",
+        "password": "pass123",
+        "program": "BSIT",
+        "yearLevel": 2,
+        "email": "avelado1@students.edu.ph",
+        "role": "student"
+      },
+      {
+        "id": "2024-2002-B",
+        "name": "Jenno Rivera",
+        "username": "jrivera1",
+        "password": "pass123",
+        "program": "BSCE",
+        "yearLevel": 1,
+        "email": "jrivera1@students.edu.ph",
+        "role": "student"
+      },
+            {
+        "id": "2024-2002-C",
+        "name": "Al Jarreau",
+        "username": "ajarreau1",
+        "password": "pass123",
+        "program": "BSCE",
+        "yearLevel": 2,
+        "email": "ajarreau1@students.edu.ph",
+        "role": "student"
+      }
+    ],
+    "faculty": [
+      {
+        "id": "F001",
+        "name": "Christian Lester Gimeno",
+        "username": "cgimeno1",
+        "password": "faculty123",
+        "department": "Computer Science",
+        "role": "faculty"
+      },
+      {
+        "id": "F002",
+        "name": "Prof. James Lim",
+        "username": "prof_lim",
+        "password": "faculty123",
+        "department": "Information Technology",
+        "role": "faculty"
+      }
+    ]
+  },
+  "courses": [
+    {
+      "code": "CS 1",
+      "title": "Programming Logic Formulation",
+      "units": 3,
+      "capacity": 35,
+      "schedule": "MWF 7:30-8:30 AM",
+      "prerequisites": [],
+      "yearLevel": 1,
+      "semester": 1,
+      "facultyId": "F001"
+    },
+    {
+      "code": "ICT 102",
+      "title": "Introduction to Computing",
+      "units": 3,
+      "capacity": 35,
+      "schedule": "TTh 9:00-10:30 AM",
+      "prerequisites": [],
+      "yearLevel": 1,
+      "semester": 1,
+      "facultyId": "F002"
+    },
+    {
+      "code": "ICT 103",
+      "title": "Fundamentals of Programming",
+      "units": 3,
+      "capacity": 30,
+      "schedule": "MWF 10:30-11:30 AM",
+      "prerequisites": ["CS 1"],
+      "yearLevel": 1,
+      "semester": 2,
+      "facultyId": "F001"
+    },
+    {
+      "code": "ICT 104",
+      "title": "Intermediate Programming",
+      "units": 3,
+      "capacity": 30,
+      "schedule": "TTh 1:00-2:30 PM",
+      "prerequisites": ["ICT 103"],
+      "yearLevel": 2,
+      "semester": 1,
+      "facultyId": "F001"
+    },
+    {
+      "code": "ICT 105",
+      "title": "Discrete Structure 1",
+      "units": 3,
+      "capacity": 30,
+      "schedule": "MWF 8:30-9:30 AM",
+      "prerequisites": [],
+      "yearLevel": 1,
+      "semester": 2,
+      "facultyId": "F002"
+    },
+    {
+      "code": "ICT 106",
+      "title": "System Fundamentals",
+      "units": 3,
+      "capacity": 30,
+      "schedule": "TTh 10:30-12:00 PM",
+      "prerequisites": [],
+      "yearLevel": 1,
+      "semester": 2,
+      "facultyId": "F002"
+    },
+    {
+      "code": "ICT 107",
+      "title": "Data Structures and Algorithms",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "MWF 1:00-2:00 PM",
+      "prerequisites": ["ICT 104"],
+      "yearLevel": 2,
+      "semester": 2,
+      "facultyId": "F001"
+    },
+    {
+      "code": "ICT 111",
+      "title": "Object Oriented Programming",
+      "units": 3,
+      "capacity": 28,
+      "schedule": "TTh 2:30-4:00 PM",
+      "prerequisites": ["ICT 104"],
+      "yearLevel": 2,
+      "semester": 2,
+      "facultyId": "F001"
+    },
+    {
+      "code": "ICT 112",
+      "title": "Operating Systems",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "MWF 2:30-3:30 PM",
+      "prerequisites": ["ICT 106"],
+      "yearLevel": 2,
+      "semester": 2,
+      "facultyId": "F002"
+    },
+    {
+      "code": "ICT 113",
+      "title": "Networks and Communications",
+      "units": 3,
+      "capacity": 30,
+      "schedule": "TTh 7:30-9:00 AM",
+      "prerequisites": ["ICT 106"],
+      "yearLevel": 2,
+      "semester": 1,
+      "facultyId": "F002"
+    },
+    {
+      "code": "ICT 114",
+      "title": "Software Engineering 1",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "MWF 9:00-10:00 AM",
+      "prerequisites": ["ICT 107"],
+      "yearLevel": 3,
+      "semester": 2,
+      "facultyId": "F001"
+    },
+    {
+      "code": "ICT 117",
+      "title": "Discrete Structure 2",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "TTh 10:30-12:00 PM",
+      "prerequisites": ["ICT 105"],
+      "yearLevel": 3,
+      "semester": 1,
+      "facultyId": "F002"
+    },
+    {
+      "code": "ICT 118",
+      "title": "Architecture and Organization",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "MWF 11:00-12:00 PM",
+      "prerequisites": ["ICT 106"],
+      "yearLevel": 3,
+      "semester": 1,
+      "facultyId": "F002"
+    },
+    {
+      "code": "ICT 108",
+      "title": "Information Assurance and Security",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "TTh 1:00-2:30 PM",
+      "prerequisites": ["ICT 113"],
+      "yearLevel": 3,
+      "semester": 1,
+      "facultyId": "F001"
+    },
+    {
+      "code": "CS 101",
+      "title": "Data Science 1",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "MWF 2:30-3:30 PM",
+      "prerequisites": ["ICT 104"],
+      "yearLevel": 2,
+      "semester": 2,
+      "facultyId": "F001"
+    },
+    {
+      "code": "ICT 116",
+      "title": "Human Computer Interaction",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "TTh 9:00-10:30 AM",
+      "prerequisites": ["ICT 114"],
+      "yearLevel": 4,
+      "semester": 2,
+      "facultyId": "F001"
+    },
+    {
+      "code": "ICT 120",
+      "title": "Intelligent Systems",
+      "units": 3,
+      "capacity": 25,
+      "schedule": "MWF 7:30-8:30 AM",
+      "prerequisites": ["CS 101"],
+      "yearLevel": 4,
+      "semester": 2,
+      "facultyId": "F001"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "E001",
+      "studentId": "2023-7066-I",
+      "courseCode": "CS 1",
+      "status": "enrolled",
+      "date": "2023-08-15",
+      "grade": "1.6",
+      "academicYear": "2023-2024",
+      "semester": 1
+    },
+    {
+      "id": "E002",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 102",
+      "status": "enrolled",
+      "date": "2023-08-15",
+      "grade": "1.7",
+      "academicYear": "2023-2024",
+      "semester": 1
+    },
+    {
+      "id": "E003",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 103",
+      "status": "enrolled",
+      "date": "2024-01-10",
+      "grade": "1.6",
+      "academicYear": "2023-2024",
+      "semester": 2
+    },
+    {
+      "id": "E004",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 105",
+      "status": "enrolled",
+      "date": "2024-01-10",
+      "grade": "2.0",
+      "academicYear": "2023-2024",
+      "semester": 2
+    },
+    {
+      "id": "E005",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 106",
+      "status": "enrolled",
+      "date": "2024-01-10",
+      "grade": "2.6",
+      "academicYear": "2023-2024",
+      "semester": 2
+    },
+    {
+      "id": "E006",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 104",
+      "status": "enrolled",
+      "date": "2024-08-12",
+      "grade": "1.4",
+      "academicYear": "2024-2025",
+      "semester": 1
+    },
+    {
+      "id": "E007",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 113",
+      "status": "enrolled",
+      "date": "2024-08-12",
+      "grade": "2.0",
+      "academicYear": "2024-2025",
+      "semester": 1
+    },
+    {
+      "id": "E008",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 107",
+      "status": "enrolled",
+      "date": "2025-01-13",
+      "grade": "1.5",
+      "academicYear": "2024-2025",
+      "semester": 2
+    },
+    {
+      "id": "E009",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 111",
+      "status": "enrolled",
+      "date": "2025-01-13",
+      "grade": "1.2",
+      "academicYear": "2024-2025",
+      "semester": 2
+    },
+    {
+      "id": "E010",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 112",
+      "status": "enrolled",
+      "date": "2025-01-13",
+      "grade": "2.3",
+      "academicYear": "2024-2025",
+      "semester": 2
+    },
+    {
+      "id": "E011",
+      "studentId": "2023-7066-I",
+      "courseCode": "CS 101",
+      "status": "enrolled",
+      "date": "2025-01-13",
+      "grade": "1.3",
+      "academicYear": "2024-2025",
+      "semester": 2
+    },
+    {
+      "id": "E012",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 118",
+      "status": "enrolled",
+      "date": "2025-08-11",
+      "grade": "1.7",
+      "academicYear": "2025-2026",
+      "semester": 1
+    },
+    {
+      "id": "E013",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 108",
+      "status": "enrolled",
+      "date": "2025-08-11",
+      "grade": "2.3",
+      "academicYear": "2025-2026",
+      "semester": 1
+    },
+    {
+      "id": "E014",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 117",
+      "status": "enrolled",
+      "date": "2025-08-11",
+      "grade": "2.2",
+      "academicYear": "2025-2026",
+      "semester": 1
+    },
+    {
+      "id": "E015",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 114",
+      "status": "dropped",
+      "date": "2026-01-12",
+      "grade": null,
+      "academicYear": "2025-2026",
+      "semester": 2
+    },
+    {
+      "id": "E016",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 116",
+      "status": "enrolled",
+      "date": "2026-01-12",
+      "grade": null,
+      "academicYear": "2025-2026",
+      "semester": 2
+    },
+    {
+      "id": "E017",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 120",
+      "status": "enrolled",
+      "date": "2026-01-12",
+      "grade": null,
+      "academicYear": "2025-2026",
+      "semester": 2
+    },
+    {
+      "id": "E020",
+      "studentId": "2023-1001-A",
+      "courseCode": "CS 1",
+      "status": "enrolled",
+      "date": "2024-08-15",
+      "grade": "2.0",
+      "academicYear": "2024-2025",
+      "semester": 1
+    },
+    {
+      "id": "E021",
+      "studentId": "2023-1001-A",
+      "courseCode": "ICT 102",
+      "status": "enrolled",
+      "date": "2024-08-15",
+      "grade": "1.75",
+      "academicYear": "2024-2025",
+      "semester": 1
+    },
+    {
+      "id": "E022",
+      "studentId": "2023-1001-A",
+      "courseCode": "ICT 103",
+      "status": "enrolled",
+      "date": "2025-01-10",
+      "grade": "1.5",
+      "academicYear": "2024-2025",
+      "semester": 2
+    },
+    {
+      "id": "E023",
+      "studentId": "2023-1001-A",
+      "courseCode": "ICT 113",
+      "status": "enrolled",
+      "date": "2025-08-12",
+      "grade": null,
+      "academicYear": "2025-2026",
+      "semester": 1
+    },
+    {
+      "id": "E030",
+      "studentId": "2024-2002-B",
+      "courseCode": "CS 1",
+      "status": "enrolled",
+      "date": "2025-08-15",
+      "grade": null,
+      "academicYear": "2025-2026",
+      "semester": 1
+    },
+    {
+      "id": "E031",
+      "studentId": "2024-2002-B",
+      "courseCode": "ICT 102",
+      "status": "enrolled",
+      "date": "2025-08-15",
+      "grade": null,
+      "academicYear": "2025-2026",
+      "semester": 1
+    },
+    {
+      "id": "E1778722551611581",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 114",
+      "status": "dropped",
+      "date": "2026-05-14",
+      "grade": null,
+      "academicYear": "2025-2026",
+      "semester": 2
+    },
+    {
+      "id": "E1779009573463227",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 114",
+      "status": "enrolled",
+      "date": "2026-05-17",
+      "grade": null,
+      "academicYear": "2025-2026",
+      "semester": 2
+    }
+  ],
+  "dropRequests": [
+    {
+      "id": "DR1778676350327799",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 114",
+      "reason": "dko na kya",
+      "status": "approved",
+      "date": "2026-05-13",
+      "facultyNote": ""
+    },
+    {
+      "id": "DR1779008632920212",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 114",
+      "reason": "Test",
+      "status": "approved",
+      "date": "2026-05-17",
+      "facultyNote": ""
+    }
+  ]
+}
