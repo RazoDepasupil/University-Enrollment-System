@@ -8,7 +8,7 @@ dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 // FIX: public folder is at project root level, not inside src/
@@ -18,3 +18,4 @@ app.use("/api", router);
 loadData();
 
 export default app;
+
