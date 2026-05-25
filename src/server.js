@@ -15,6 +15,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use("/api", router);
 
-loadData();
-
-export default app;
+loadData().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Listening on http://localhost:${PORT}`);
+  });
+});
