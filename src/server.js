@@ -18,4 +18,3 @@ app.use("/api", router);
 loadData();
 
 export default app;
-

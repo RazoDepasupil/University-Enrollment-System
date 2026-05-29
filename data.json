@@ -31,7 +31,7 @@
         "email": "jrivera1@students.edu.ph",
         "role": "student"
       },
-            {
+      {
         "id": "2024-2002-C",
         "name": "Al Jarreau",
         "username": "ajarreau1",
@@ -90,7 +90,9 @@
       "units": 3,
       "capacity": 30,
       "schedule": "MWF 10:30-11:30 AM",
-      "prerequisites": ["CS 1"],
+      "prerequisites": [
+        "CS 1"
+      ],
       "yearLevel": 1,
       "semester": 2,
       "facultyId": "F001"
@@ -101,7 +103,9 @@
       "units": 3,
       "capacity": 30,
       "schedule": "TTh 1:00-2:30 PM",
-      "prerequisites": ["ICT 103"],
+      "prerequisites": [
+        "ICT 103"
+      ],
       "yearLevel": 2,
       "semester": 1,
       "facultyId": "F001"
@@ -134,7 +138,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "MWF 1:00-2:00 PM",
-      "prerequisites": ["ICT 104"],
+      "prerequisites": [
+        "ICT 104"
+      ],
       "yearLevel": 2,
       "semester": 2,
       "facultyId": "F001"
@@ -145,7 +151,9 @@
       "units": 3,
       "capacity": 28,
       "schedule": "TTh 2:30-4:00 PM",
-      "prerequisites": ["ICT 104"],
+      "prerequisites": [
+        "ICT 104"
+      ],
       "yearLevel": 2,
       "semester": 2,
       "facultyId": "F001"
@@ -156,7 +164,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "MWF 2:30-3:30 PM",
-      "prerequisites": ["ICT 106"],
+      "prerequisites": [
+        "ICT 106"
+      ],
       "yearLevel": 2,
       "semester": 2,
       "facultyId": "F002"
@@ -167,7 +177,9 @@
       "units": 3,
       "capacity": 30,
       "schedule": "TTh 7:30-9:00 AM",
-      "prerequisites": ["ICT 106"],
+      "prerequisites": [
+        "ICT 106"
+      ],
       "yearLevel": 2,
       "semester": 1,
       "facultyId": "F002"
@@ -178,7 +190,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "MWF 9:00-10:00 AM",
-      "prerequisites": ["ICT 107"],
+      "prerequisites": [
+        "ICT 107"
+      ],
       "yearLevel": 3,
       "semester": 2,
       "facultyId": "F001"
@@ -189,7 +203,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "TTh 10:30-12:00 PM",
-      "prerequisites": ["ICT 105"],
+      "prerequisites": [
+        "ICT 105"
+      ],
       "yearLevel": 3,
       "semester": 1,
       "facultyId": "F002"
@@ -200,7 +216,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "MWF 11:00-12:00 PM",
-      "prerequisites": ["ICT 106"],
+      "prerequisites": [
+        "ICT 106"
+      ],
       "yearLevel": 3,
       "semester": 1,
       "facultyId": "F002"
@@ -211,7 +229,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "TTh 1:00-2:30 PM",
-      "prerequisites": ["ICT 113"],
+      "prerequisites": [
+        "ICT 113"
+      ],
       "yearLevel": 3,
       "semester": 1,
       "facultyId": "F001"
@@ -222,7 +242,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "MWF 2:30-3:30 PM",
-      "prerequisites": ["ICT 104"],
+      "prerequisites": [
+        "ICT 104"
+      ],
       "yearLevel": 2,
       "semester": 2,
       "facultyId": "F001"
@@ -233,7 +255,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "TTh 9:00-10:30 AM",
-      "prerequisites": ["ICT 114"],
+      "prerequisites": [
+        "ICT 114"
+      ],
       "yearLevel": 4,
       "semester": 2,
       "facultyId": "F001"
@@ -244,7 +268,9 @@
       "units": 3,
       "capacity": 25,
       "schedule": "MWF 7:30-8:30 AM",
-      "prerequisites": ["CS 101"],
+      "prerequisites": [
+        "CS 101"
+      ],
       "yearLevel": 4,
       "semester": 2,
       "facultyId": "F001"
@@ -519,6 +545,15 @@
       "reason": "Test",
       "status": "approved",
       "date": "2026-05-17",
+      "facultyNote": ""
+    },
+    {
+      "id": "DR1780028179878904",
+      "studentId": "2023-7066-I",
+      "courseCode": "ICT 120",
+      "reason": "gg",
+      "status": "rejected",
+      "date": "2026-05-29",
       "facultyNote": ""
     }
   ]
