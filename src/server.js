@@ -17,4 +17,7 @@ app.use("/api", router);
 
 loadData();
 
-export default app;
+
+app.listen(PORT,()=>{
+    console.log(`listening on localhost:${PORT}`);
+});
